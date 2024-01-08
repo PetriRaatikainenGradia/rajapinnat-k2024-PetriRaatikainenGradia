@@ -1,1 +1,1 @@
-Gradian rajapinnat-kurssi k2024
+This file is intentionally left blank
