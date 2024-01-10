@@ -9,22 +9,31 @@ Scrooge wants to use the application to get the following information for differ
 Additional information:
 
 - Both start and end dates should be included in a date range.
-- A day’s price means the price at 00:00 UTC time (use price data from as close to midnight as possible as the day’s price, if you don’t have a datapoint from exactly midnight).
+- A day’s price means the price at 00:00 UTC time (use price data from as close to midnight as possible as the day’s price, if you don’t have a datapoint from exactly midnight.
 - Allow the user of your application to pass the start and end dates of the date range in some way, e.g. via input fields in a UI or as parameters to an API.
 
-#### A. How many days is the longest bearish (downward) trend within a given date range?
+#### A. Which date within a given date range had the lowest and the highest price? (T1)
+
+- Expected output: The dates with the lowest and highest trading volume and the volume on that day in euros.
+
+#### B. Which date within a given date range had the lowest and the highest trading volume? (T1)
+
+- Expected output: The dates with the lowest and highest trading volume and the volume on that day in euros.
+
+#### C. How many days is the longest bearish (downward) and bullish (upward) trend within a given date range? (T2, H3)
 
 - Definition of a downward trend shall be: “Price of day N is lower than price of day N-1”
 - Expected output: The maximum amount of days bitcoin’s price was decreasing in a row.
 Example: In bitcoin’s historical data from CoinGecko, the price decreased 2 days in a row for the inputs from 2020-01-19 and to 2020-01-21, and the price decreased for 8 days in a row for the inputs from 2020-03-01 and to 2021-08-01.
 
-#### B. Which date within a given date range had the highest trading volume?
+#### D. Scrooge has access to Gyro Gearloose’s newest invention, a time machine. Scrooge wants to use the time machine to profit from bitcoin. The application should be able to tell for a given date range, the best day for buying bitcoin, and the best day for selling the bought bitcoin to maximize profits and vice versa e.g. sell first and buy back later on. You don't have to consider any side effects of time travel or how Scrooge's massive purchases would affect the price history. (H4, K5)
 
-- Expected output: The date with the highest trading volume and the volume on that day in euros.
+- Expected output: A pair of days: The day to buy and the day to sell and the other way aroud. 
 
-#### C. Scrooge has access to Gyro Gearloose’s newest invention, a time machine. Scrooge wants to use the time machine to profit from bitcoin. The application should be able to tell for a given date range, the best day for buying bitcoin, and the best day for selling the bought bitcoin to maximize profits. If the price only decreases in the date range, your output should indicate that one should not buy (nor sell) bitcoin on any of the days. You don't have to consider any side effects of time travel or how Scrooge's massive purchases would affect the price history.
+#### E. Some sort of graphical chart displaying the data in the time interval (++)
 
-- Expected output: A pair of days: The day to buy and the day to sell. In the case when one should neither buy nor sell, return an indicative output of your choice.
+- Expected output: you define
+
 
 ## Use CoinGecko’s public API to get the needed data
 
@@ -42,5 +51,5 @@ What we value:
 
 - Clean code
 - Ease of use — Either host your solution somewhere where it can be used immediately, or include clear directions (e.g. in a README file) for running your solution.
-- Simplicity — Minimize the use of external libraries and dependencies. We want to see how you manage with a programming language of your choice, not how many packages you are able to import. You are of course highly encouraged to use any conveniences or standard library utilities that ship with your chosen language. It's also fine to build your solution around a single 3rd party library or framework, if that adds value to your solution.
-- Extensibility — Scrooge only wants these three features for now, but very likely wants to hire us to add capabilities to the application after it has proved its value to him.
+- Simplicity — Minimize the use of external libraries and dependencies. We want to see how you manage with a programming language of your choice (gradia C#), not how many packages you are able to import. You are of course highly encouraged to use any conveniences or standard library utilities that ship with your chosen language. It's also fine to build your solution around a single 3rd party library or framework, if that adds value to your solution.
+- Extensibility — Scrooge only wants these six features for now, but very likely wants to hire us to add capabilities to the application after it has proved its value to him.
